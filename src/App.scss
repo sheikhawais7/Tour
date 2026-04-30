@@ -1,0 +1,19 @@
+$bgColor : #3A4750;
+// -------------- Components --------------
+@import './SCSS/Components/bootstrap';
+@import './SCSS/Components/ScreenLoader';
+// -------------- Frontend --------------
+@import './SCSS/Pages/agent.scss';
+@import './SCSS/Pages/Image-gallery.scss';
+
+#root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f3f3f3;
+}
+
+main{
+    flex: 1 0 auto;
+  
+}
