@@ -12,7 +12,6 @@ export default function Index() {
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/agent' element={<Agent/>} />
-        <Route path='/imageGallery' element={<ImageGallery/>} />
       </Routes>
      
     </>

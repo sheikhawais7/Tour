@@ -12,7 +12,7 @@ const Agent = () => {
     const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(false);
     const chatContainerRef = useRef(null);
-    const [gallery, setGallery] = useGalleryContext()
+
 
     useEffect(() => {
         AOS.init({ duration: 1000 });
@@ -63,7 +63,6 @@ const Agent = () => {
 
     const fetchImages = async (text) => {
         const keywords = extractKeywords(text);
-        console.log("Extracted keywords:", keywords);
 
         const imagePromises = keywords.map(keyword => fetchImageWithRetry(keyword));
         const imagesData = await Promise.all(imagePromises);
@@ -74,8 +73,6 @@ const Agent = () => {
             imageUrl: item.imageUrl
         }));
 
-        console.log("Images fetched:", imagesArray);
-        setGallery([...imagesArray])
         setImages(imagesArray);
     };
 
@@ -171,11 +168,6 @@ const Agent = () => {
                 </p>
                 <div className="chat-container" ref={chatContainerRef}>
                     <ReactMarkdown components={renderers} style={{ color: 'white' }}>{response}</ReactMarkdown>
-                    {response && images.length > 0 && (
-                        <Link to={"/imageGallery"} style={{ "textDecoration": "none" }} className='d-flex justify-content-center'>
-                            <button className="image-button ">Image Gallery</button>
-                        </Link>
-                    )}
                 </div>
 
                 <div className="input-container">

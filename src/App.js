@@ -2,7 +2,7 @@ import Index from 'Pages/Routes';
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle"
 import './App.scss';
 import ScreenLoader from 'Components/Screen Loader/ScreenLoader';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
 
