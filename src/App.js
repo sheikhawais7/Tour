@@ -8,20 +8,46 @@ function App() {
 
   const [isApploading , setIsAppLoading] = useState(true)
 
-  setTimeout(()=>{
-    setIsAppLoading(false)
-  },1000)
+  useEffect(() => {
+     setTimeout(() => {
+       setIsAppLoading(false)
+     }, 1000)
+   }, [])
+  
+   if (isApploading) {
+     return <ScreenLoader />
+   }
+  
+   return <Index />
+}
+
+  export default App;
+
+
+
+
+
+
+
+
+
+
+
+//   setTimeout(()=>{
+//     setIsAppLoading(false)
+//   },1000)
 
 
   
-  if (isApploading) return <ScreenLoader />
-  else return <Index />
-  return (
-    <>
+//   if (isApploading) return <ScreenLoader />
+//   else return <Index />
+//   return (
+//     <>
 
 
-    </>
-  );
-}
+//     </>
+//   );
+// }
 
-export default App;
+// export default App;
+

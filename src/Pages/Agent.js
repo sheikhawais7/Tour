@@ -5,7 +5,6 @@ import ReactMarkdown from 'react-markdown';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Groq from "groq-sdk";
-import { useGalleryContext } from 'Context/GalleryContext';
 
 const Agent = () => {
     const [destination, setDestination] = useState('');
